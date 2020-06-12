@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, {PureComponent} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -7,33 +7,34 @@ import {
   Button,
   Text,
   TouchableOpacity,
-  Platform,
+  Image,
   Alert,
   Keyboard,
 } from 'react-native';
-import MapView, { PROVIDER_GOOGLE, Polyline, Marker } from 'react-native-maps';
-import RetroMapStyles from './RetroMapStyles.json';
+import MapView, {PROVIDER_GOOGLE, Polyline, Marker} from 'react-native-maps';
 import axios from 'axios';
 import Geolocation from 'react-native-geolocation-service';
-import { ScrollView } from 'react-native-gesture-handler';
+import {ScrollView} from 'react-native-gesture-handler';
+import Overlay from 'react-native-modal-overlay';
 
 const pathType = {
   1: '지하철',
   2: '버스',
-  3: '지하철+버스'
-}
+  3: '지하철+버스',
+};
 
 const trafficType = {
   1: '지하철',
   2: '버스',
-  3: '도보'
-}
+  3: '도보',
+};
 
 class Navigation extends PureComponent {
   constructor(props) {
     super(props);
     this.mapRef = null;
     this.state = {
+      modalVisible: false,
       region: null,
       ready: true,
       coordinateFinal: null,
@@ -43,44 +44,50 @@ class Navigation extends PureComponent {
       coordinateWalking: null,
       coordinateCycling: null,
       coordinateDriving: null,
-      start: '',
-      startPoint: '',
-      end: '',
-      endPoint: '',
+      start: this.props.start,
+      startPoint: this.props.startPoint,
+      end: this.props.end,
+      endPoint: this.props.endPoint,
       marker: '',
       result: false,
       path: [],
     };
-
   }
-  
+
   componentDidMount() {
     console.log('Component did mount');
-    Geolocation.getCurrentPosition(
-      (position) => {
-        this.setState({
-          region: {
-            latitude: position.coords.latitude,
-            longitude: position.coords.longitude,
-            longitudeDelta: 0.03,
-            latitudeDelta: 0.03,
-          },
-        });
-      },
-      (error) => {
-        Alert.alert(error.message.toString());
-      },
-      {
-        showLocationDialog: true,
-        enableHighAccuracy: true,
-        timeout: 10000,
-        maximumAge: 0,
-      },
-    );
+    const {start} = this.state;
+    if (start) {
+      console.log('aaaa');
+      this._onSearchHandle();
+    } else {
+      console.log('ggg');
+      Geolocation.getCurrentPosition(
+        (position) => {
+          this.setState({
+            region: {
+              latitude: position.coords.latitude,
+              longitude: position.coords.longitude,
+              longitudeDelta: 0.03,
+              latitudeDelta: 0.03,
+            },
+          });
+        },
+        (error) => {
+          Alert.alert(error.message.toString());
+        },
+        {
+          showLocationDialog: true,
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
+        },
+      );
+    }
   }
 
   _onStartEditHandle = (start) => {
-    this.setState({ start });
+    this.setState({start});
     axios(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${start}.json?access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`,
     )
@@ -90,7 +97,7 @@ class Navigation extends PureComponent {
           longitude: res.data.features[0].geometry.coordinates[0],
         };
         // console.log(coords);
-        this.setState({ startPoint: coords });
+        this.setState({startPoint: coords});
       })
       .catch((errors) => {
         // react on errors.
@@ -98,7 +105,7 @@ class Navigation extends PureComponent {
   };
 
   _onEndEditHandle = (end) => {
-    this.setState({ end });
+    this.setState({end});
     axios(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${end}.json?access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`,
     )
@@ -108,7 +115,7 @@ class Navigation extends PureComponent {
           longitude: res.data.features[0].geometry.coordinates[0],
         };
         // console.log(coords);
-        this.setState({ endPoint: coords });
+        this.setState({endPoint: coords});
       })
       .catch((errors) => {
         // react on errors.
@@ -118,33 +125,30 @@ class Navigation extends PureComponent {
   // 경로검색을 통해 api 경로 받아옴
   _onSearchHandle = () => {
     Keyboard.dismiss();
-
-    const { startPoint, endPoint } = this.state;
-
+    const {startPoint, endPoint} = this.state;
+    console.log(startPoint);
     let walking = `https://api.mapbox.com/directions/v5/mapbox/walking/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let cycling = `https://api.mapbox.com/directions/v5/mapbox/cycling/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let driving = `https://api.mapbox.com/directions/v5/mapbox/driving/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
 
-    let odsay = `http://169.56.97.117/publictransportpath.php?SX=${startPoint.longitude}&SY=${startPoint.latitude}&EX=${endPoint.longitude}&EY=${endPoint.latitude}`
-    console.log(odsay)
+    let odsay = `http://169.56.97.117/publictransportpath.php?SX=${startPoint.longitude}&SY=${startPoint.latitude}&EX=${endPoint.longitude}&EY=${endPoint.latitude}`;
+    console.log(odsay);
 
     const requestWalking = axios.get(walking);
     const requestCycling = axios.get(cycling);
     const requestDriving = axios.get(driving);
 
-
     axios({
       method: 'get',
       url: odsay,
       // responseType: 'arraybutter'
-    })
-      .then(response => {
-        console.log('버스 결과 개수', response.data.result.busCount)
-        console.log('지하철 결과 개수', response.data.result.subwayCount)
-        console.log('지하철+버스 결과 개수', response.data.result.subwayBusCount)
-        // console.log(pathType[response.data.result.path[0].pathType])
-        this.setState({ path: response.data.result.path });
-      });
+    }).then((response) => {
+      console.log('버스 결과 개수', response.data.result.busCount);
+      console.log('지하철 결과 개수', response.data.result.subwayCount);
+      console.log('지하철+버스 결과 개수', response.data.result.subwayBusCount);
+      // console.log(pathType[response.data.result.path[0].pathType])
+      this.setState({path: response.data.result.path});
+    });
 
     axios
       .all([requestWalking, requestCycling, requestDriving])
@@ -152,19 +156,19 @@ class Navigation extends PureComponent {
         axios.spread((...responses) => {
           let coordinateWalking = responses[0].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return { latitude: item[1], longitude: item[0] };
+              return {latitude: item[1], longitude: item[0]};
             },
           );
 
           let coordinateCycling = responses[1].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return { latitude: item[1], longitude: item[0] };
+              return {latitude: item[1], longitude: item[0]};
             },
           );
 
           let coordinateDriving = responses[2].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return { latitude: item[1], longitude: item[0] };
+              return {latitude: item[1], longitude: item[0]};
             },
           );
           this.setState({
@@ -182,8 +186,6 @@ class Navigation extends PureComponent {
       .catch((errors) => {
         // react on errors.
       });
-
-
   };
 
   _onNavigationView = (mode) => {
@@ -200,37 +202,46 @@ class Navigation extends PureComponent {
     }, 1000);
     // console.log(mode);
     if (mode === 'walking') {
-      this.setState({ result: false, coordinateFinal: coordinateWalking });
+      this.setState({result: false, coordinateFinal: coordinateWalking});
     } else if (mode === 'cycling') {
-      this.setState({ result: false, coordinateFinal: coordinateCycling });
+      this.setState({result: false, coordinateFinal: coordinateCycling});
     } else if (mode === 'driving') {
-      this.setState({ result: false, coordinateFinal: coordinateDriving });
+      this.setState({result: false, coordinateFinal: coordinateDriving});
     }
   };
 
-  rad = (x) => {
-    return (x * Math.PI) / 180;
-  };
+  calcDistance(lat1, lon1, lat2, lon2) {
+    var EARTH_R, Rad, radLat1, radLat2, radDist;
+    var distance, ret;
+    EARTH_R = 6371000.0;
+    Rad = Math.PI / 180;
+    radLat1 = Rad * lat1;
+    radLat2 = Rad * lat2;
+    radDist = Rad * (lon1 - lon2);
+    distance = Math.sin(radLat1) * Math.sin(radLat2);
+    distance =
+      distance + Math.cos(radLat1) * Math.cos(radLat2) * Math.cos(radDist);
+    ret = EARTH_R * Math.acos(distance);
+    var rtn = Math.round(Math.round(ret));
+    return rtn;
+  }
 
-  getDistance = (p1, p2) => {
-    const R = 6378137; // Earth’s mean radius in meter
-    const dLat = this.rad(p2.latitude - p1.latitude);
-    const dLong = this.rad(p2.longitude - p1.longitude);
-    const xxx = parseInt(dLat);
-    const a =
-      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(this.rad(p1.latitude)) *
-        Math.cos(this.rad(p2.latiDegr)) *
-        Math.sin(dLong / 2) *
-        Math.sin(dLong / 2);
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    const d = R * c;
-    return d; // returns the distance in meter
-  };
+  _onClose = () => this.setState({modalVisible: false});
+
   _onRegionChange = (region) => {
     const {endPoint} = this.state;
     console.log('_onRegionChange: ' + region.latitude);
-    console.log(this.getDistance(region, endPoint));
+    let distance = this.calcDistance(
+      region.latitude,
+      region.longitude,
+      endPoint.latitude,
+      endPoint.longitude,
+    );
+    console.log(distance);
+    if (distance <= 10) {
+      console.log('ggggg');
+      this.setState({modalVisible: true});
+    }
     // getDistance(region, endPoint);
   };
 
@@ -245,8 +256,9 @@ class Navigation extends PureComponent {
       responseCycling,
       responseDriving,
       region,
-      path
-    } = this.state
+      path,
+      modalVisible,
+    } = this.state;
 
     const mapView = (
       <MapView
@@ -262,18 +274,12 @@ class Navigation extends PureComponent {
           this._onRegionChange(region);
         }}
         style={{flex: 1}}>
-        region={this.state.region}
-        onMapReady={this.onMapReady}
-        showsMyLocationButton={false}
-        onRegionChange={this.onRegionChange}
-        onRegionChangeComplete={this.onRegionChangeComplete}
-        style={{ flex: 1 }}>
         {/* <Marker coordinate={desLocation} title={'시작'} /> */}
         {coordinateFinal === null ? (
           <Marker />
         ) : (
-            marker.map((marker) => <Marker coordinate={marker} />)
-          )}
+          marker.map((marker) => <Marker coordinate={marker} />)
+        )}
         <Polyline
           coordinates={coordinateFinal} // 연결될 선들의 좌표
           strokeColor="red"
@@ -285,14 +291,13 @@ class Navigation extends PureComponent {
 
     const convertTimestamptoTime = (unixTimestamp) => {
       let dateObj = new Date(unixTimestamp * 1000);
-      utcString = dateObj.toUTCString();
-      time = utcString.slice(-11, -4);
+      let utcString = dateObj.toUTCString();
+      let time = utcString.slice(-11, -4);
       return time;
-    }
+    };
 
     const transPath = (item) => (
-
-      <View style={{ margin: 10 }}>
+      <View style={{margin: 10}}>
         <Text>{pathType[item.pathType]}</Text>
         <Text>{item.info.totalTime} 분</Text>
         <Text>{item.info.totalDistance} km</Text>
@@ -304,91 +309,97 @@ class Navigation extends PureComponent {
               <Text>{index} 번째</Text>
               <Text>{trafficType[item2.trafficType]}</Text>
               <Text>{item2.distance}</Text>
-              <Text style={{ color: 'red' }}>{item2.startName} -> {item2.endName}</Text>
+              <Text style={{color: 'red'}}>
+                {item2.startName} -> {item2.endName}
+              </Text>
             </View>
-          )
+          );
         })}
       </View>
-    )
+    );
     const resultView = (
       <ScrollView style={styles.resultContainer}>
         <TouchableOpacity onPress={() => this._onNavigationView('walking')}>
-          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
-            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green' }}>
+          <View style={{flexDirection: 'column', marginBottom: 25}}>
+            <Text style={{marginBottom: 8, fontSize: 26, color: 'green'}}>
               Green
             </Text>
-            <Text style={{ marginBottom: 8, fontSize: 20 }}>걷기</Text>
+            <Text style={{marginBottom: 8, fontSize: 20}}>걷기</Text>
             {responseWalking === null ? (
               <View></View>
             ) : (
-                <View>
-                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
-                    {responseWalking.data.routes[0].legs[0].distance}m
+              <View>
+                <Text style={{marginBottom: 8, fontSize: 20}}>
+                  {responseWalking.data.routes[0].legs[0].distance}m
                 </Text>
-                  <Text style={{ marginBottom: 8 }}>
-                    {convertTimestamptoTime(responseWalking.data.routes[0].legs[0].duration)}
-                  </Text>
-                </View>
-              )}
+                <Text style={{marginBottom: 8}}>
+                  {convertTimestamptoTime(
+                    responseWalking.data.routes[0].legs[0].duration,
+                  )}
+                </Text>
+              </View>
+            )}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('cycling')}>
-          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
-            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green' }}>
+          <View style={{flexDirection: 'column', marginBottom: 25}}>
+            <Text style={{marginBottom: 8, fontSize: 26, color: 'green'}}>
               Green
             </Text>
-            <Text style={{ marginBottom: 8, fontSize: 20 }}>자전거</Text>
+            <Text style={{marginBottom: 8, fontSize: 20}}>자전거</Text>
             {responseCycling === null ? (
               <View></View>
             ) : (
-                <View>
-                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
-                    {responseCycling.data.routes[0].legs[0].distance}m
+              <View>
+                <Text style={{marginBottom: 8, fontSize: 20}}>
+                  {responseCycling.data.routes[0].legs[0].distance}m
                 </Text>
-                  <Text style={{ marginBottom: 8 }}>
-                    {convertTimestamptoTime(responseCycling.data.routes[0].legs[0].duration)}
-                  </Text>
-                </View>
-              )}
+                <Text style={{marginBottom: 8}}>
+                  {convertTimestamptoTime(
+                    responseCycling.data.routes[0].legs[0].duration,
+                  )}
+                </Text>
+              </View>
+            )}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('driving')}>
-          <View style={{ flexDirection: 'column' }}>
-            <Text style={{ marginBottom: 8, fontSize: 26, color: 'red' }}>
+          <View style={{flexDirection: 'column'}}>
+            <Text style={{marginBottom: 8, fontSize: 26, color: 'red'}}>
               Red
             </Text>
-            <Text style={{ marginBottom: 8, fontSize: 20 }}>자동차</Text>
+            <Text style={{marginBottom: 8, fontSize: 20}}>자동차</Text>
             {responseDriving === null ? (
               <View></View>
             ) : (
-                <View>
-                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
-                    {responseDriving.data.routes[0].legs[0].distance}m
+              <View>
+                <Text style={{marginBottom: 8, fontSize: 20}}>
+                  {responseDriving.data.routes[0].legs[0].distance}m
                 </Text>
-                  <Text style={{ marginBottom: 8 }}>
-                    {convertTimestamptoTime(responseDriving.data.routes[0].legs[0].duration)}
-                  </Text>
-                </View>
-              )}
+                <Text style={{marginBottom: 8}}>
+                  {convertTimestamptoTime(
+                    responseDriving.data.routes[0].legs[0].duration,
+                  )}
+                </Text>
+              </View>
+            )}
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <View style={{ flexDirection: 'column' }}>
-            <Text style={{ marginBottom: 8, fontSize: 26, color: 'yellow' }}>
-              Yello
+          <View style={{flexDirection: 'column'}}>
+            <Text style={{marginBottom: 8, fontSize: 26, color: 'yellow'}}>
+              Yellow
             </Text>
-            <Text style={{ marginBottom: 8, fontSize: 20 }}>대중교통</Text>
-            {path.map(item => transPath(item))}
+            <Text style={{marginBottom: 8, fontSize: 20}}>대중교통</Text>
+            {path.map((item) => transPath(item))}
           </View>
-
         </TouchableOpacity>
-
       </ScrollView>
     );
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{ height: 100, flexDirection: 'column' }}>
-          <View style={{ flex: 1 }}>
+        <View style={{height: 100, flexDirection: 'column'}}>
+          <View style={{flex: 1}}>
             <TextInput
               {...commonInputProps}
               fontSize={17}
@@ -399,7 +410,7 @@ class Navigation extends PureComponent {
               value={start}
             />
           </View>
-          <View style={{ flex: 1 }}>
+          <View style={{flex: 1}}>
             <TextInput
               {...commonInputProps}
               fontSize={17}
@@ -420,6 +431,32 @@ class Navigation extends PureComponent {
           />
         </View>
         {result === false ? mapView : resultView}
+        {modalVisible === false ? null : (
+          <Overlay
+            visible={this.state.modalVisible}
+            onClose={this.onClose}
+            closeOnTouchOutside
+            animationType="zoomIn"
+            containerStyle={{backgroundColor: 'rgba(37, 8, 10, 0.78)'}}
+            childrenWrapperStyle={{backgroundColor: '#eee'}}
+            animationDuration={500}>
+            {(hideModal, overlayState) => (
+              <View
+                style={{
+                  height: 300,
+                  width: 300,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <Image
+                  style={styles.conIcon}
+                  source={require('../../images/con.png')}
+                />
+                <Text style={{fontSize: 28}}>Success</Text>
+              </View>
+            )}
+          </Overlay>
+        )}
       </SafeAreaView>
     );
   }
@@ -455,6 +492,10 @@ const styles = StyleSheet.create({
     padding: 4,
     backgroundColor: '#FFF',
     color: '#000',
+  },
+  conIcon: {
+    width: 150,
+    height: 150,
   },
 });
 

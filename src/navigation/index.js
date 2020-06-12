@@ -2,13 +2,15 @@ import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
 
 import NavigationScreen from './NavigationScreen';
+import HomeScreen from './HomeScreen';
 
 const AuthStack = createStackNavigator(
   {
+    HomeScreen: {screen: HomeScreen},
     NavigationScreen: {screen: NavigationScreen},
   },
   {
-    initialRouteName: 'NavigationScreen',
+    initialRouteName: 'HomeScreen',
   },
 );
 
