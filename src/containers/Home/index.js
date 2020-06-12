@@ -9,7 +9,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
-import { NavigationService } from '@green/common';
+import {NavigationService} from '@green/common';
 
 class Home extends PureComponent {
   constructor(props) {
