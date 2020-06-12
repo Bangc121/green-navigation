@@ -9,7 +9,6 @@ import {
   TouchableOpacity,
   Image,
   Alert,
-  Keyboard,
 } from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Polyline, Marker} from 'react-native-maps';
 import axios from 'axios';
@@ -126,7 +125,6 @@ class Navigation extends PureComponent {
   _onSearchHandle = () => {
     Keyboard.dismiss();
     const {startPoint, endPoint} = this.state;
-    console.log(startPoint);
     let walking = `https://api.mapbox.com/directions/v5/mapbox/walking/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let cycling = `https://api.mapbox.com/directions/v5/mapbox/cycling/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let driving = `https://api.mapbox.com/directions/v5/mapbox/driving/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
@@ -249,7 +247,7 @@ class Navigation extends PureComponent {
     const {
       coordinateFinal,
       start,
-      end,
+      destination,
       marker,
       result,
       responseWalking,
@@ -258,6 +256,7 @@ class Navigation extends PureComponent {
       region,
       path,
       modalVisible,
+      path,
     } = this.state;
 
     const mapView = (
@@ -299,19 +298,20 @@ class Navigation extends PureComponent {
     const transPath = (item) => (
       <View style={{margin: 10}}>
         <Text>{pathType[item.pathType]}</Text>
+      <View style={{ padding: 30, marginTop: 10, marginBottom: 10, backgroundColor: '#e8ebff', borderRadius: 15 }}>
+        <Text style={{ fontSize: 18, color: '#45435e', fontWeight: 'bold' }}>{pathType[item.pathType]}</Text>
         <Text>{item.info.totalTime} 분</Text>
         <Text>{item.info.totalDistance} km</Text>
         <Text>이동경로</Text>
         {item.subPath.map((item2, index) => {
-          if (item2.distance === 0) return;
+          console.log(item2.startName)
+          if (item2.distance === 0 || !item2.startName || !item2.endName) return;
           return (
             <View>
-              <Text>{index} 번째</Text>
+              <Text style={{ fontWeight: 'bold', marginTop: 5 }}>{index} 번째</Text>
               <Text>{trafficType[item2.trafficType]}</Text>
-              <Text>{item2.distance}</Text>
-              <Text style={{color: 'red'}}>
-                {item2.startName} -> {item2.endName}
-              </Text>
+              <Text>{item2.distance} km</Text>
+              <Text style={{ color: '#3247c9', fontWeight: 'bold' }}>{item2.startName} -> {item2.endName}</Text>
             </View>
           );
         })}
@@ -320,11 +320,11 @@ class Navigation extends PureComponent {
     const resultView = (
       <ScrollView style={styles.resultContainer}>
         <TouchableOpacity onPress={() => this._onNavigationView('walking')}>
-          <View style={{flexDirection: 'column', marginBottom: 25}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'green'}}>
+          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green', fontWeight: 'bold' }}>
               Green
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>걷기</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20, fontWeight: 'bold' }}>걷기</Text>
             {responseWalking === null ? (
               <View></View>
             ) : (
@@ -342,11 +342,11 @@ class Navigation extends PureComponent {
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('cycling')}>
-          <View style={{flexDirection: 'column', marginBottom: 25}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'green'}}>
+          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green', fontWeight: 'bold' }}>
               Green
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>자전거</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20, fontWeight: 'bold' }}>자전거</Text>
             {responseCycling === null ? (
               <View></View>
             ) : (
@@ -364,11 +364,11 @@ class Navigation extends PureComponent {
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('driving')}>
-          <View style={{flexDirection: 'column'}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'red'}}>
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'red', fontWeight: 'bold' }}>
               Red
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>자동차</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20, fontWeight: 'bold' }}>자동차</Text>
             {responseDriving === null ? (
               <View></View>
             ) : (
@@ -386,12 +386,12 @@ class Navigation extends PureComponent {
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
-          <View style={{flexDirection: 'column'}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'yellow'}}>
-              Yellow
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: '#ffc56e', fontWeight: 'bold' }}>
+              Yello
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>대중교통</Text>
-            {path.map((item) => transPath(item))}
+            <Text style={{ marginBottom: 8, fontSize: 20, fontWeight: 'bold' }}>대중교통</Text>
+            {path.map(item => transPath(item))}
           </View>
         </TouchableOpacity>
       </ScrollView>
@@ -418,7 +418,7 @@ class Navigation extends PureComponent {
               keyboardType="default"
               onChangeText={this._onEndEditHandle}
               returnKeyType="next"
-              value={end}
+              value={destination}
             />
           </View>
         </View>
@@ -468,11 +468,10 @@ const styles = StyleSheet.create({
   },
   resultContainer: {
     flex: 1,
-    padding: 12,
+    padding: 40,
   },
   input: {
     borderColor: '#9B9B9B',
-    color: 'black',
     height: 40,
     marginTop: 10,
     marginLeft: 10,
