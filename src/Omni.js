@@ -1,5 +1,5 @@
 import reactotron from 'reactotron-react-native';
-import {Constants} from '@test/common';
+import {Constants} from '@green/common';
 import _EventEmitter from 'react-native/Libraries/vendor/emitter/EventEmitter';
 import _Timer from 'react-timer-mixin';
 import _Icon from 'react-native-vector-icons/MaterialCommunityIcons';

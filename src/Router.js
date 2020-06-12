@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Navigation from '@test/navigation';
-import {NavigationService} from '@test/common';
+import Navigation from '@green/navigation';
+import {NavigationService} from '@green/common';
 
 class Router extends Component {
   constructor(props) {
