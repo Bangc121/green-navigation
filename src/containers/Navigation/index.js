@@ -9,15 +9,13 @@ import {
   TouchableOpacity,
   Platform,
   Alert,
+  Keyboard,
 } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Polyline, Marker } from 'react-native-maps';
 import RetroMapStyles from './RetroMapStyles.json';
 import axios from 'axios';
 import Geolocation from 'react-native-geolocation-service';
 import { ScrollView } from 'react-native-gesture-handler';
-
-const LATITUDE_DELTA = 0.01;
-const LONGITUDE_DELTA = 0.01;
 
 const pathType = {
   1: '지하철',
@@ -34,13 +32,9 @@ const trafficType = {
 class Navigation extends PureComponent {
   constructor(props) {
     super(props);
+    this.mapRef = null;
     this.state = {
-      region: {
-        latitude: 37.478189,
-        longitude: 126.982148,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      },
+      region: null,
       ready: true,
       coordinateFinal: null,
       responseWalking: null,
@@ -58,74 +52,32 @@ class Navigation extends PureComponent {
       path: [],
     };
 
-
   }
-
-
-
-  // setRegion(region) {
-  //   if (this.state.ready) {
-  //     setTimeout(() => this.map.mapview.animateToRegion(region), 10);
-  //   }
-  //   //this.setState({ region });
-  // }
-
-  // componentDidMount() {
-  //   console.log('Component did mount');
-  //   this.getCurrentPosition();
-  // }
-
-  // getCurrentPosition() {
-  //   try {
-  //     navigator.geolocation.getCurrentPosition(
-  //       (position) => {
-  //         const region = {
-  //           latitude: position.coords.latitude,
-  //           longitude: position.coords.longitude,
-  //           latitudeDelta: LATITUDE_DELTA,
-  //           longitudeDelta: LONGITUDE_DELTA,
-  //         };
-  //         this.setRegion(region);
-  //       },
-  //       (error) => {
-  //         //TODO: better design
-  //         switch (error.code) {
-  //           case 1:
-  //             if (Platform.OS === 'ios') {
-  //               Alert.alert(
-  //                 '',
-  //                 'Para ubicar tu locación habilita permiso para la aplicación en Ajustes - Privacidad - Localización',
-  //               );
-  //             } else {
-  //               Alert.alert(
-  //                 '',
-  //                 'Para ubicar tu locación habilita permiso para la aplicación en Ajustes - Apps - ExampleApp - Localización',
-  //               );
-  //             }
-  //             break;
-  //           default:
-  //             Alert.alert('', 'Error al detectar tu locación');
-  //         }
-  //       },
-  //     );
-  //   } catch (e) {
-  //     alert(e.message || '');
-  //   }
-  // }
-
-  // onMapReady = (e) => {
-  //   if (!this.state.ready) {
-  //     this.setState({ready: true});
-  //   }
-  // };
-
-  // onRegionChange = (region) => {
-  //   console.log('onRegionChange', region);
-  // };
-
-  // onRegionChangeComplete = (region) => {
-  //   console.log('onRegionChangeComplete', region);
-  // };
+  
+  componentDidMount() {
+    console.log('Component did mount');
+    Geolocation.getCurrentPosition(
+      (position) => {
+        this.setState({
+          region: {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+            longitudeDelta: 0.03,
+            latitudeDelta: 0.03,
+          },
+        });
+      },
+      (error) => {
+        Alert.alert(error.message.toString());
+      },
+      {
+        showLocationDialog: true,
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 0,
+      },
+    );
+  }
 
   _onStartEditHandle = (start) => {
     this.setState({ start });
@@ -165,6 +117,8 @@ class Navigation extends PureComponent {
 
   // 경로검색을 통해 api 경로 받아옴
   _onSearchHandle = () => {
+    Keyboard.dismiss();
+
     const { startPoint, endPoint } = this.state;
 
     let walking = `https://api.mapbox.com/directions/v5/mapbox/walking/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
@@ -238,6 +192,12 @@ class Navigation extends PureComponent {
       coordinateCycling,
       coordinateDriving,
     } = this.state;
+    setTimeout(() => {
+      this.mapRef.fitToCoordinates(coordinateWalking, {
+        edgePadding: {top: 50, right: 50, bottom: 120, left: 50},
+        animated: true,
+      });
+    }, 1000);
     // console.log(mode);
     if (mode === 'walking') {
       this.setState({ result: false, coordinateFinal: coordinateWalking });
@@ -248,11 +208,37 @@ class Navigation extends PureComponent {
     }
   };
 
+  rad = (x) => {
+    return (x * Math.PI) / 180;
+  };
+
+  getDistance = (p1, p2) => {
+    const R = 6378137; // Earth’s mean radius in meter
+    const dLat = this.rad(p2.latitude - p1.latitude);
+    const dLong = this.rad(p2.longitude - p1.longitude);
+    const xxx = parseInt(dLat);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(this.rad(p1.latitude)) *
+        Math.cos(this.rad(p2.latiDegr)) *
+        Math.sin(dLong / 2) *
+        Math.sin(dLong / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    const d = R * c;
+    return d; // returns the distance in meter
+  };
+  _onRegionChange = (region) => {
+    const {endPoint} = this.state;
+    console.log('_onRegionChange: ' + region.latitude);
+    console.log(this.getDistance(region, endPoint));
+    // getDistance(region, endPoint);
+  };
+
   render() {
     const {
       coordinateFinal,
       start,
-      destination,
+      end,
       marker,
       result,
       responseWalking,
@@ -260,18 +246,22 @@ class Navigation extends PureComponent {
       responseDriving,
       region,
       path
-    } = this.state;
-
-
+    } = this.state
 
     const mapView = (
       <MapView
         provider={PROVIDER_GOOGLE}
-        ref={(map) => {
-          this.map = map;
+        ref={(ref) => {
+          this.mapRef = ref;
         }}
         // customMapStyle={RetroMapStyles}
         showsUserLocation={true}
+        followUserLocation={true}
+        region={region}
+        onRegionChange={(region) => {
+          this._onRegionChange(region);
+        }}
+        style={{flex: 1}}>
         region={this.state.region}
         onMapReady={this.onMapReady}
         showsMyLocationButton={false}
@@ -417,7 +407,7 @@ class Navigation extends PureComponent {
               keyboardType="default"
               onChangeText={this._onEndEditHandle}
               returnKeyType="next"
-              value={destination}
+              value={end}
             />
           </View>
         </View>
@@ -445,6 +435,7 @@ const styles = StyleSheet.create({
   },
   input: {
     borderColor: '#9B9B9B',
+    color: 'black',
     height: 40,
     marginTop: 10,
     marginLeft: 10,
