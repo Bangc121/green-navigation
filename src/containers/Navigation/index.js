@@ -1,4 +1,4 @@
-import React, {PureComponent} from 'react';
+import React, { PureComponent } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,13 +10,26 @@ import {
   Platform,
   Alert,
 } from 'react-native';
-import MapView, {PROVIDER_GOOGLE, Polyline, Marker} from 'react-native-maps';
+import MapView, { PROVIDER_GOOGLE, Polyline, Marker } from 'react-native-maps';
 import RetroMapStyles from './RetroMapStyles.json';
 import axios from 'axios';
 import Geolocation from 'react-native-geolocation-service';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const LATITUDE_DELTA = 0.01;
 const LONGITUDE_DELTA = 0.01;
+
+const pathType = {
+  1: '지하철',
+  2: '버스',
+  3: '지하철+버스'
+}
+
+const trafficType = {
+  1: '지하철',
+  2: '버스',
+  3: '도보'
+}
 
 class Navigation extends PureComponent {
   constructor(props) {
@@ -42,8 +55,13 @@ class Navigation extends PureComponent {
       endPoint: '',
       marker: '',
       result: false,
+      path: [],
     };
+
+
   }
+
+
 
   // setRegion(region) {
   //   if (this.state.ready) {
@@ -110,7 +128,7 @@ class Navigation extends PureComponent {
   // };
 
   _onStartEditHandle = (start) => {
-    this.setState({start});
+    this.setState({ start });
     axios(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${start}.json?access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`,
     )
@@ -119,8 +137,8 @@ class Navigation extends PureComponent {
           latitude: res.data.features[0].geometry.coordinates[1],
           longitude: res.data.features[0].geometry.coordinates[0],
         };
-        console.log(coords);
-        this.setState({startPoint: coords});
+        // console.log(coords);
+        this.setState({ startPoint: coords });
       })
       .catch((errors) => {
         // react on errors.
@@ -128,7 +146,7 @@ class Navigation extends PureComponent {
   };
 
   _onEndEditHandle = (end) => {
-    this.setState({end});
+    this.setState({ end });
     axios(
       `https://api.mapbox.com/geocoding/v5/mapbox.places/${end}.json?access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`,
     )
@@ -137,8 +155,8 @@ class Navigation extends PureComponent {
           latitude: res.data.features[0].geometry.coordinates[1],
           longitude: res.data.features[0].geometry.coordinates[0],
         };
-        console.log(coords);
-        this.setState({endPoint: coords});
+        // console.log(coords);
+        this.setState({ endPoint: coords });
       })
       .catch((errors) => {
         // react on errors.
@@ -147,15 +165,32 @@ class Navigation extends PureComponent {
 
   // 경로검색을 통해 api 경로 받아옴
   _onSearchHandle = () => {
-    const {startPoint, endPoint} = this.state;
+    const { startPoint, endPoint } = this.state;
 
     let walking = `https://api.mapbox.com/directions/v5/mapbox/walking/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let cycling = `https://api.mapbox.com/directions/v5/mapbox/cycling/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
     let driving = `https://api.mapbox.com/directions/v5/mapbox/driving/${startPoint.longitude},${startPoint.latitude};${endPoint.longitude},${endPoint.latitude}?geometries=geojson&access_token=pk.eyJ1Ijoia2ltanVuZ2h3YW4iLCJhIjoiY2tiM2R3ZDRkMG01dTM0bjlydWNqam03NCJ9.GYTyiR9uY91Wy_B37gvMug`;
 
+    let odsay = `http://169.56.97.117/publictransportpath.php?SX=${startPoint.longitude}&SY=${startPoint.latitude}&EX=${endPoint.longitude}&EY=${endPoint.latitude}`
+    console.log(odsay)
+
     const requestWalking = axios.get(walking);
     const requestCycling = axios.get(cycling);
     const requestDriving = axios.get(driving);
+
+
+    axios({
+      method: 'get',
+      url: odsay,
+      // responseType: 'arraybutter'
+    })
+      .then(response => {
+        console.log('버스 결과 개수', response.data.result.busCount)
+        console.log('지하철 결과 개수', response.data.result.subwayCount)
+        console.log('지하철+버스 결과 개수', response.data.result.subwayBusCount)
+        // console.log(pathType[response.data.result.path[0].pathType])
+        this.setState({ path: response.data.result.path });
+      });
 
     axios
       .all([requestWalking, requestCycling, requestDriving])
@@ -163,19 +198,19 @@ class Navigation extends PureComponent {
         axios.spread((...responses) => {
           let coordinateWalking = responses[0].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return {latitude: item[1], longitude: item[0]};
+              return { latitude: item[1], longitude: item[0] };
             },
           );
 
           let coordinateCycling = responses[1].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return {latitude: item[1], longitude: item[0]};
+              return { latitude: item[1], longitude: item[0] };
             },
           );
 
           let coordinateDriving = responses[2].data.routes[0].geometry.coordinates.map(
             (item) => {
-              return {latitude: item[1], longitude: item[0]};
+              return { latitude: item[1], longitude: item[0] };
             },
           );
           this.setState({
@@ -193,6 +228,8 @@ class Navigation extends PureComponent {
       .catch((errors) => {
         // react on errors.
       });
+
+
   };
 
   _onNavigationView = (mode) => {
@@ -201,13 +238,13 @@ class Navigation extends PureComponent {
       coordinateCycling,
       coordinateDriving,
     } = this.state;
-    console.log(mode);
+    // console.log(mode);
     if (mode === 'walking') {
-      this.setState({result: false, coordinateFinal: coordinateWalking});
+      this.setState({ result: false, coordinateFinal: coordinateWalking });
     } else if (mode === 'cycling') {
-      this.setState({result: false, coordinateFinal: coordinateCycling});
+      this.setState({ result: false, coordinateFinal: coordinateCycling });
     } else if (mode === 'driving') {
-      this.setState({result: false, coordinateFinal: coordinateDriving});
+      this.setState({ result: false, coordinateFinal: coordinateDriving });
     }
   };
 
@@ -222,7 +259,10 @@ class Navigation extends PureComponent {
       responseCycling,
       responseDriving,
       region,
+      path
     } = this.state;
+
+
 
     const mapView = (
       <MapView
@@ -237,13 +277,13 @@ class Navigation extends PureComponent {
         showsMyLocationButton={false}
         onRegionChange={this.onRegionChange}
         onRegionChangeComplete={this.onRegionChangeComplete}
-        style={{flex: 1}}>
+        style={{ flex: 1 }}>
         {/* <Marker coordinate={desLocation} title={'시작'} /> */}
         {coordinateFinal === null ? (
           <Marker />
         ) : (
-          marker.map((marker) => <Marker coordinate={marker} />)
-        )}
+            marker.map((marker) => <Marker coordinate={marker} />)
+          )}
         <Polyline
           coordinates={coordinateFinal} // 연결될 선들의 좌표
           strokeColor="red"
@@ -252,74 +292,113 @@ class Navigation extends PureComponent {
         />
       </MapView>
     );
+
+    const convertTimestamptoTime = (unixTimestamp) => {
+      let dateObj = new Date(unixTimestamp * 1000);
+      utcString = dateObj.toUTCString();
+      time = utcString.slice(-11, -4);
+      return time;
+    }
+
+    const transPath = (item) => (
+
+      <View style={{ margin: 10 }}>
+        <Text>{pathType[item.pathType]}</Text>
+        <Text>{item.info.totalTime} 분</Text>
+        <Text>{item.info.totalDistance} km</Text>
+        <Text>이동경로</Text>
+        {item.subPath.map((item2, index) => {
+          if (item2.distance === 0) return;
+          return (
+            <View>
+              <Text>{index} 번째</Text>
+              <Text>{trafficType[item2.trafficType]}</Text>
+              <Text>{item2.distance}</Text>
+              <Text style={{ color: 'red' }}>{item2.startName} -> {item2.endName}</Text>
+            </View>
+          )
+        })}
+      </View>
+    )
     const resultView = (
-      <View style={styles.resultContainer}>
+      <ScrollView style={styles.resultContainer}>
         <TouchableOpacity onPress={() => this._onNavigationView('walking')}>
-          <View style={{flexDirection: 'column', marginBottom: 25}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'green'}}>
+          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green' }}>
               Green
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>걷기</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20 }}>걷기</Text>
             {responseWalking === null ? (
               <View></View>
             ) : (
-              <View>
-                <Text style={{marginBottom: 8, fontSize: 20}}>
-                  {responseWalking.data.routes[0].legs[0].distance}m
+                <View>
+                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
+                    {responseWalking.data.routes[0].legs[0].distance}m
                 </Text>
-                <Text style={{marginBottom: 8}}>
-                  {responseWalking.data.routes[0].legs[0].duration}분
-                </Text>
-              </View>
-            )}
+                  <Text style={{ marginBottom: 8 }}>
+                    {convertTimestamptoTime(responseWalking.data.routes[0].legs[0].duration)}
+                  </Text>
+                </View>
+              )}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('cycling')}>
-          <View style={{flexDirection: 'column', marginBottom: 25}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'yellow'}}>
-              Yellow
+          <View style={{ flexDirection: 'column', marginBottom: 25 }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'green' }}>
+              Green
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>자전거</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20 }}>자전거</Text>
             {responseCycling === null ? (
               <View></View>
             ) : (
-              <View>
-                <Text style={{marginBottom: 8, fontSize: 20}}>
-                  {responseCycling.data.routes[0].legs[0].distance}m
+                <View>
+                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
+                    {responseCycling.data.routes[0].legs[0].distance}m
                 </Text>
-                <Text style={{marginBottom: 8}}>
-                  {responseCycling.data.routes[0].legs[0].duration}분
-                </Text>
-              </View>
-            )}
+                  <Text style={{ marginBottom: 8 }}>
+                    {convertTimestamptoTime(responseCycling.data.routes[0].legs[0].duration)}
+                  </Text>
+                </View>
+              )}
           </View>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => this._onNavigationView('driving')}>
-          <View style={{flexDirection: 'column'}}>
-            <Text style={{marginBottom: 8, fontSize: 26, color: 'red'}}>
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'red' }}>
               Red
             </Text>
-            <Text style={{marginBottom: 8, fontSize: 20}}>자동차</Text>
+            <Text style={{ marginBottom: 8, fontSize: 20 }}>자동차</Text>
             {responseDriving === null ? (
               <View></View>
             ) : (
-              <View>
-                <Text style={{marginBottom: 8, fontSize: 20}}>
-                  {responseDriving.data.routes[0].legs[0].distance}m
+                <View>
+                  <Text style={{ marginBottom: 8, fontSize: 20 }}>
+                    {responseDriving.data.routes[0].legs[0].distance}m
                 </Text>
-                <Text style={{marginBottom: 8}}>
-                  {responseDriving.data.routes[0].legs[0].duration}분
-                </Text>
-              </View>
-            )}
+                  <Text style={{ marginBottom: 8 }}>
+                    {convertTimestamptoTime(responseDriving.data.routes[0].legs[0].duration)}
+                  </Text>
+                </View>
+              )}
           </View>
         </TouchableOpacity>
-      </View>
+        <TouchableOpacity>
+          <View style={{ flexDirection: 'column' }}>
+            <Text style={{ marginBottom: 8, fontSize: 26, color: 'yellow' }}>
+              Yello
+            </Text>
+            <Text style={{ marginBottom: 8, fontSize: 20 }}>대중교통</Text>
+            {path.map(item => transPath(item))}
+          </View>
+
+        </TouchableOpacity>
+
+      </ScrollView>
     );
     return (
       <SafeAreaView style={styles.container}>
-        <View style={{height: 100, flexDirection: 'column'}}>
-          <View style={{flex: 1}}>
+        <View style={{ height: 100, flexDirection: 'column' }}>
+          <View style={{ flex: 1 }}>
             <TextInput
               {...commonInputProps}
               fontSize={17}
@@ -330,7 +409,7 @@ class Navigation extends PureComponent {
               value={start}
             />
           </View>
-          <View style={{flex: 1}}>
+          <View style={{ flex: 1 }}>
             <TextInput
               {...commonInputProps}
               fontSize={17}

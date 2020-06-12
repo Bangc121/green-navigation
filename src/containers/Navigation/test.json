@@ -1,0 +1,3546 @@
+{
+    "result": {
+        "searchType": 0,
+        "outTrafficCheck": 0,
+        "busCount": 6,
+        "subwayCount": 4,
+        "subwayBusCount": 5,
+        "pointDistance": 9514,
+        "startRadius": 700,
+        "endRadius": 700,
+        "path": [
+            {
+                "pathType": 1,
+                "info": {
+                    "trafficDistance": 11100,
+                    "totalWalk": 0,
+                    "totalTime": 34,
+                    "payment": 1350,
+                    "busTransitCount": 0,
+                    "subwayTransitCount": 2,
+                    "mapObj": "2:2:240:234@12:2:140:172",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가산디지털단지",
+                    "totalStationCount": 8,
+                    "busStationCount": 0,
+                    "subwayStationCount": 8,
+                    "totalDistance": 11100,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 7600,
+                        "sectionTime": 18,
+                        "stationCount": 6,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "신도림",
+                        "endX": 126.891344,
+                        "endY": 37.508563,
+                        "way": "신도림",
+                        "wayCode": 1,
+                        "door": "7-2",
+                        "startID": 240,
+                        "endID": 234,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 3500,
+                        "sectionTime": 14,
+                        "stationCount": 2,
+                        "lane": [
+                            {
+                                "name": "수도권 1호선",
+                                "subwayCode": 1,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신도림",
+                        "startX": 126.891598,
+                        "startY": 37.508998,
+                        "endName": "가산디지털단지",
+                        "endX": 126.882643,
+                        "endY": 37.481432,
+                        "way": "가산디지털단지",
+                        "wayCode": 2,
+                        "door": "null",
+                        "startID": 140,
+                        "endID": 172,
+                        "endExitNo": "8",
+                        "endExitX": 126.88241476020511,
+                        "endExitY": 37.48125174061953,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 140,
+                                    "stationName": "신도림",
+                                    "x": "126.8916",
+                                    "y": "37.509006"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 141,
+                                    "stationName": "구로",
+                                    "x": "126.882278",
+                                    "y": "37.502916"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 172,
+                                    "stationName": "가산디지털단지",
+                                    "x": "126.882652",
+                                    "y": "37.48144"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    }
+                ]
+            },
+            {
+                "pathType": 3,
+                "info": {
+                    "trafficDistance": 13124,
+                    "totalWalk": 133,
+                    "totalTime": 39,
+                    "payment": 1350,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 1,
+                    "mapObj": "2:2:240:232@1134:1:105:112",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가산디지털단지역",
+                    "totalStationCount": 15,
+                    "busStationCount": 7,
+                    "subwayStationCount": 8,
+                    "totalDistance": 13257,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 10500,
+                        "sectionTime": 24,
+                        "stationCount": 8,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "구로디지털단지",
+                        "endX": 126.90148,
+                        "endY": 37.485258,
+                        "way": "구로디지털단지",
+                        "wayCode": 1,
+                        "door": "null",
+                        "startID": 240,
+                        "endID": 232,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "endExitNo": "1",
+                        "endExitX": 126.90203722821391,
+                        "endExitY": 37.48482290533543,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 232,
+                                    "stationName": "구로디지털단지",
+                                    "x": "126.901487",
+                                    "y": "37.48526"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 81,
+                        "sectionTime": 1
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 2624,
+                        "sectionTime": 13,
+                        "stationCount": 7,
+                        "lane": [
+                            {
+                                "busNo": "5616",
+                                "type": 12,
+                                "busID": 1134
+                            }
+                        ],
+                        "startName": "구로디지털단지역환승센터",
+                        "startX": 126.902042,
+                        "startY": 37.484686,
+                        "endName": "가산디지털단지역",
+                        "endX": 126.883242,
+                        "endY": 37.481402,
+                        "startID": 123664,
+                        "endID": 123678,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 123664,
+                                    "stationName": "구로디지털단지역환승센터",
+                                    "x": "126.902042",
+                                    "y": "37.484686"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 102351,
+                                    "stationName": "구로디지털단지역",
+                                    "x": "126.901586",
+                                    "y": "37.483421"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 125182,
+                                    "stationName": "한국산업단지공단.이마트구로점",
+                                    "x": "126.896656",
+                                    "y": "37.484213"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 102168,
+                                    "stationName": "디지털산업1단지",
+                                    "x": "126.89477",
+                                    "y": "37.484069"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 102101,
+                                    "stationName": "만민중앙교회",
+                                    "x": "126.892532",
+                                    "y": "37.481696"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 102046,
+                                    "stationName": "디지털단지오거리",
+                                    "x": "126.8907",
+                                    "y": "37.480201"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101954,
+                                    "stationName": "금천패션아울렛사거리.마리오",
+                                    "x": "126.888454",
+                                    "y": "37.478369"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 123678,
+                                    "stationName": "가산디지털단지역",
+                                    "x": "126.883242",
+                                    "y": "37.481402"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 52,
+                        "sectionTime": 1
+                    }
+                ]
+            },
+            {
+                "pathType": 3,
+                "info": {
+                    "trafficDistance": 13563,
+                    "totalWalk": 227,
+                    "totalTime": 43,
+                    "payment": 1350,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 1,
+                    "mapObj": "2:2:240:232@509:1:23:33",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가산디지털단지역",
+                    "totalStationCount": 18,
+                    "busStationCount": 10,
+                    "subwayStationCount": 8,
+                    "totalDistance": 13790,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 10500,
+                        "sectionTime": 24,
+                        "stationCount": 8,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "구로디지털단지",
+                        "endX": 126.90148,
+                        "endY": 37.485258,
+                        "way": "구로디지털단지",
+                        "wayCode": 1,
+                        "door": "null",
+                        "startID": 240,
+                        "endID": 232,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "endExitNo": "1",
+                        "endExitX": 126.90203722821391,
+                        "endExitY": 37.48482290533543,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 232,
+                                    "stationName": "구로디지털단지",
+                                    "x": "126.901487",
+                                    "y": "37.48526"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 76,
+                        "sectionTime": 1
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 3063,
+                        "sectionTime": 16,
+                        "stationCount": 10,
+                        "lane": [
+                            {
+                                "busNo": "금천07",
+                                "type": 3,
+                                "busID": 509
+                            }
+                        ],
+                        "startName": "구로디지털단지역환승센터",
+                        "startX": 126.902098,
+                        "startY": 37.484786,
+                        "endName": "가산디지털단지역",
+                        "endX": 126.883441,
+                        "endY": 37.480232,
+                        "startID": 197681,
+                        "endID": 93086,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 197681,
+                                    "stationName": "구로디지털단지역환승센터",
+                                    "x": "126.902098",
+                                    "y": "37.484786"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 125662,
+                                    "stationName": "구로디지털단지입구",
+                                    "x": "126.900642",
+                                    "y": "37.483006"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 93080,
+                                    "stationName": "JNK디지털타워",
+                                    "x": "126.897455",
+                                    "y": "37.482166"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 93081,
+                                    "stationName": "에이스하이엔드타워2차",
+                                    "x": "126.895666",
+                                    "y": "37.48077"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 93082,
+                                    "stationName": "만민중앙교회",
+                                    "x": "126.894504",
+                                    "y": "37.480588"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 93083,
+                                    "stationName": "에이스하이엔드타워1차",
+                                    "x": "126.893027",
+                                    "y": "37.481115"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 102045,
+                                    "stationName": "디지털단지오거리",
+                                    "x": "126.890762",
+                                    "y": "37.478256"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 93084,
+                                    "stationName": "SG세계물산",
+                                    "x": "126.889491",
+                                    "y": "37.476307"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 150981,
+                                    "stationName": "가산로데오거리",
+                                    "x": "126.88789",
+                                    "y": "37.478283"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 93085,
+                                    "stationName": "이앤씨드림타워7차",
+                                    "x": "126.886658",
+                                    "y": "37.47983"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 93086,
+                                    "stationName": "가산디지털단지역",
+                                    "x": "126.883441",
+                                    "y": "37.480232"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 151,
+                        "sectionTime": 2
+                    }
+                ]
+            },
+            {
+                "pathType": 3,
+                "info": {
+                    "trafficDistance": 11306,
+                    "totalWalk": 543,
+                    "totalTime": 43,
+                    "payment": 1350,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 1,
+                    "mapObj": "2:2:240:234@1137:1:27:36",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 15,
+                    "busStationCount": 9,
+                    "subwayStationCount": 6,
+                    "totalDistance": 11849,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 7600,
+                        "sectionTime": 19,
+                        "stationCount": 6,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "신도림",
+                        "endX": 126.891344,
+                        "endY": 37.508563,
+                        "way": "신도림",
+                        "wayCode": 1,
+                        "door": "null",
+                        "startID": 240,
+                        "endID": 234,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "endExitNo": "3",
+                        "endExitX": 126.89142507228286,
+                        "endExitY": 37.50784005343832,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 140,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 3706,
+                        "sectionTime": 16,
+                        "stationCount": 9,
+                        "lane": [
+                            {
+                                "busNo": "5619",
+                                "type": 12,
+                                "busID": 1137
+                            }
+                        ],
+                        "startName": "신도림역",
+                        "startX": 126.891476,
+                        "startY": 37.507303,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 102100,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 102100,
+                                    "stationName": "신도림역",
+                                    "x": "126.891476",
+                                    "y": "37.507303"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 101993,
+                                    "stationName": "서울미래초등학교",
+                                    "x": "126.889379",
+                                    "y": "37.505292"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 102014,
+                                    "stationName": "거리공원.구로신협본점앞",
+                                    "x": "126.888559",
+                                    "y": "37.502653"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 102065,
+                                    "stationName": "구로도서관.대성스카이렉스",
+                                    "x": "126.891091",
+                                    "y": "37.499632"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 111414,
+                                    "stationName": "영림중학교",
+                                    "x": "126.891697",
+                                    "y": "37.496925"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 101960,
+                                    "stationName": "구로구청",
+                                    "x": "126.88741",
+                                    "y": "37.494695"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 3,
+                "info": {
+                    "trafficDistance": 10570,
+                    "totalWalk": 828,
+                    "totalTime": 43,
+                    "payment": 1350,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 1,
+                    "mapObj": "2:2:240:233@1443:1:0:5",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 12,
+                    "busStationCount": 5,
+                    "subwayStationCount": 7,
+                    "totalDistance": 11398,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 9400,
+                        "sectionTime": 22,
+                        "stationCount": 7,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "대림",
+                        "endX": 126.894916,
+                        "endY": 37.493369,
+                        "way": "대림",
+                        "wayCode": 1,
+                        "door": "null",
+                        "startID": 240,
+                        "endID": 233,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "endExitNo": "1",
+                        "endExitX": 126.89487007224417,
+                        "endExitY": 37.49235925343581,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 425,
+                        "sectionTime": 6
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 1170,
+                        "sectionTime": 9,
+                        "stationCount": 5,
+                        "lane": [
+                            {
+                                "busNo": "5618",
+                                "type": 12,
+                                "busID": 1443
+                            }
+                        ],
+                        "startName": "보성운수기종점",
+                        "startX": 126.892909,
+                        "startY": 37.48989,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 193914,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 193914,
+                                    "stationName": "보성운수기종점",
+                                    "x": "126.892909",
+                                    "y": "37.48989"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 102031,
+                                    "stationName": "구로두산아파트",
+                                    "x": "126.889941",
+                                    "y": "37.488682"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 101977,
+                                    "stationName": "남구로역6번출구",
+                                    "x": "126.888498",
+                                    "y": "37.48765"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 101926,
+                                    "stationName": "남구로역",
+                                    "x": "126.886574",
+                                    "y": "37.485443"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 1,
+                "info": {
+                    "trafficDistance": 10500,
+                    "totalWalk": 660,
+                    "totalTime": 44,
+                    "payment": 1350,
+                    "busTransitCount": 0,
+                    "subwayTransitCount": 2,
+                    "mapObj": "2:2:240:233@7:2:744:745",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "남구로",
+                    "totalStationCount": 8,
+                    "busStationCount": 0,
+                    "subwayStationCount": 8,
+                    "totalDistance": 11160,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 9400,
+                        "sectionTime": 21,
+                        "stationCount": 7,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "대림",
+                        "endX": 126.894916,
+                        "endY": 37.493369,
+                        "way": "대림",
+                        "wayCode": 1,
+                        "door": "4-1",
+                        "startID": 240,
+                        "endID": 233,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 1100,
+                        "sectionTime": 11,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "name": "수도권 7호선",
+                                "subwayCode": 7,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "대림",
+                        "startX": 126.896677,
+                        "startY": 37.492809,
+                        "endName": "남구로",
+                        "endX": 126.887277,
+                        "endY": 37.486089,
+                        "way": "남구로",
+                        "wayCode": 2,
+                        "door": "null",
+                        "startID": 744,
+                        "endID": 745,
+                        "endExitNo": "3",
+                        "endExitX": 126.88611501521581,
+                        "endExitY": 37.484657884031726,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 744,
+                                    "stationName": "대림",
+                                    "x": "126.896683",
+                                    "y": "37.492811"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 745,
+                                    "stationName": "남구로",
+                                    "x": "126.887288",
+                                    "y": "37.486098"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 660,
+                        "sectionTime": 10
+                    }
+                ]
+            },
+            {
+                "pathType": 3,
+                "info": {
+                    "trafficDistance": 14109,
+                    "totalWalk": 124,
+                    "totalTime": 45,
+                    "payment": 1350,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 1,
+                    "mapObj": "2:2:240:232@1528:1:15:30",
+                    "firstStartStation": "신촌",
+                    "lastEndStation": "가산디지털단지역",
+                    "totalStationCount": 23,
+                    "busStationCount": 15,
+                    "subwayStationCount": 8,
+                    "totalDistance": 14233,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 10500,
+                        "sectionTime": 24,
+                        "stationCount": 8,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신촌",
+                        "startX": 126.937374,
+                        "startY": 37.555245,
+                        "endName": "구로디지털단지",
+                        "endX": 126.90148,
+                        "endY": 37.485258,
+                        "way": "구로디지털단지",
+                        "wayCode": 1,
+                        "door": "null",
+                        "startID": 240,
+                        "endID": 232,
+                        "startExitNo": "4",
+                        "startExitX": 126.93729205942542,
+                        "startExitY": 37.55545446369539,
+                        "endExitNo": "1",
+                        "endExitX": 126.90203722821391,
+                        "endExitY": 37.48482290533543,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 240,
+                                    "stationName": "신촌",
+                                    "x": "126.937376",
+                                    "y": "37.555251"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 232,
+                                    "stationName": "구로디지털단지",
+                                    "x": "126.901487",
+                                    "y": "37.48526"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 76,
+                        "sectionTime": 1
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 3609,
+                        "sectionTime": 19,
+                        "stationCount": 15,
+                        "lane": [
+                            {
+                                "busNo": "금천03",
+                                "type": 3,
+                                "busID": 1528
+                            }
+                        ],
+                        "startName": "구로디지털단지역환승센터",
+                        "startX": 126.902098,
+                        "startY": 37.484786,
+                        "endName": "가산디지털단지역",
+                        "endX": 126.883184,
+                        "endY": 37.481527,
+                        "startID": 197681,
+                        "endID": 196217,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 197681,
+                                    "stationName": "구로디지털단지역환승센터",
+                                    "x": "126.902098",
+                                    "y": "37.484786"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 86306,
+                                    "stationName": "문성골",
+                                    "x": "126.899986",
+                                    "y": "37.481486"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 123659,
+                                    "stationName": "독산고개입구",
+                                    "x": "126.898299",
+                                    "y": "37.477038"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 102206,
+                                    "stationName": "가산초교",
+                                    "x": "126.896488",
+                                    "y": "37.477165"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 123675,
+                                    "stationName": "고원약국",
+                                    "x": "126.894741",
+                                    "y": "37.476806"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 102124,
+                                    "stationName": "가산동주민센터.금천글로벌센터",
+                                    "x": "126.893529",
+                                    "y": "37.476164"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 123679,
+                                    "stationName": "두산위브아파트정문",
+                                    "x": "126.893615",
+                                    "y": "37.474958"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 121843,
+                                    "stationName": "두산어린이공원",
+                                    "x": "126.894266",
+                                    "y": "37.473747"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 102110,
+                                    "stationName": "구립가산도서관.두산위브아파트",
+                                    "x": "126.892412",
+                                    "y": "37.473703"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 102056,
+                                    "stationName": "LG전자",
+                                    "x": "126.89028",
+                                    "y": "37.47416"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101974,
+                                    "stationName": "에이스하이엔드타워클래식(성지아트빌)",
+                                    "x": "126.88871",
+                                    "y": "37.473299"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101935,
+                                    "stationName": "온누리아파트",
+                                    "x": "126.887404",
+                                    "y": "37.473701"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101918,
+                                    "stationName": "제일모직아울렛",
+                                    "x": "126.88609",
+                                    "y": "37.474662"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 122179,
+                                    "stationName": "벽산디지털밸리",
+                                    "x": "126.885316",
+                                    "y": "37.476529"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 122181,
+                                    "stationName": "마리오아울렛",
+                                    "x": "126.884451",
+                                    "y": "37.47844"
+                                },
+                                {
+                                    "index": 15,
+                                    "stationID": 196217,
+                                    "stationName": "가산디지털단지역",
+                                    "x": "126.883184",
+                                    "y": "37.481527"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 48,
+                        "sectionTime": 1
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 12603,
+                    "totalWalk": 583,
+                    "totalTime": 51,
+                    "payment": 1200,
+                    "busTransitCount": 1,
+                    "subwayTransitCount": 0,
+                    "mapObj": "1154:1:50:74",
+                    "firstStartStation": "신촌로터리",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 24,
+                    "busStationCount": 24,
+                    "subwayStationCount": 0,
+                    "totalDistance": 13186,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 180,
+                        "sectionTime": 3
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 12603,
+                        "sectionTime": 42,
+                        "stationCount": 24,
+                        "lane": [
+                            {
+                                "busNo": "5714",
+                                "type": 12,
+                                "busID": 1154
+                            }
+                        ],
+                        "startName": "신촌로터리",
+                        "startX": 126.937261,
+                        "startY": 37.553632,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 103700,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103700,
+                                    "stationName": "신촌로터리",
+                                    "x": "126.937261",
+                                    "y": "37.553632"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 193782,
+                                    "stationName": "신촌오거리.현대백화점",
+                                    "x": "126.934737",
+                                    "y": "37.55597"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 193779,
+                                    "stationName": "동교동삼거리",
+                                    "x": "126.929471",
+                                    "y": "37.557805"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 193777,
+                                    "stationName": "홍대입구역",
+                                    "x": "126.924542",
+                                    "y": "37.557418"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 193776,
+                                    "stationName": "서교동",
+                                    "x": "126.920275",
+                                    "y": "37.554262"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 193772,
+                                    "stationName": "합정역",
+                                    "x": "126.91405",
+                                    "y": "37.549636"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 112431,
+                                    "stationName": "선유도공원",
+                                    "x": "126.90247",
+                                    "y": "37.542078"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 102294,
+                                    "stationName": "당산역",
+                                    "x": "126.899462",
+                                    "y": "37.534968"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 102453,
+                                    "stationName": "당산역삼성래미안아파트",
+                                    "x": "126.903315",
+                                    "y": "37.533012"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 102519,
+                                    "stationName": "삼환아파트",
+                                    "x": "126.90559",
+                                    "y": "37.529078"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 102498,
+                                    "stationName": "신화병원",
+                                    "x": "126.90518",
+                                    "y": "37.524641"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 102478,
+                                    "stationName": "영등포시장",
+                                    "x": "126.904809",
+                                    "y": "37.521357"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 123115,
+                                    "stationName": "경방타임스퀘어.신세계백화점",
+                                    "x": "126.906",
+                                    "y": "37.517278"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 15,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 16,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 17,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 18,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 19,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 20,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 21,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 22,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 23,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 24,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 1,
+                "info": {
+                    "trafficDistance": 10800,
+                    "totalWalk": 386,
+                    "totalTime": 55,
+                    "payment": 1350,
+                    "busTransitCount": 0,
+                    "subwayTransitCount": 3,
+                    "mapObj": "19:2:1608:1609@2:2:239:234@12:2:140:172",
+                    "firstStartStation": "서강대",
+                    "lastEndStation": "가산디지털단지",
+                    "totalStationCount": 8,
+                    "busStationCount": 0,
+                    "subwayStationCount": 8,
+                    "totalDistance": 11186,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 386,
+                        "sectionTime": 6
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 1000,
+                        "sectionTime": 11,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "name": "경의중앙선",
+                                "subwayCode": 104,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "서강대",
+                        "startX": 126.935403,
+                        "startY": 37.552137,
+                        "endName": "홍대입구",
+                        "endX": 126.928082,
+                        "endY": 37.556801,
+                        "way": "홍대입구",
+                        "wayCode": 1,
+                        "door": "1-1",
+                        "startID": 1608,
+                        "endID": 1609,
+                        "startExitNo": "2",
+                        "startExitX": 126.93447337941888,
+                        "startExitY": 37.55274267668967,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 1608,
+                                    "stationName": "서강대",
+                                    "x": "126.935406",
+                                    "y": "37.552141"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 1609,
+                                    "stationName": "홍대입구",
+                                    "x": "126.928086",
+                                    "y": "37.556804"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 6300,
+                        "sectionTime": 20,
+                        "stationCount": 5,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "홍대입구",
+                        "startX": 126.92378,
+                        "startY": 37.556843,
+                        "endName": "신도림",
+                        "endX": 126.891344,
+                        "endY": 37.508563,
+                        "way": "신도림",
+                        "wayCode": 1,
+                        "door": "7-2",
+                        "startID": 239,
+                        "endID": 234,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 3500,
+                        "sectionTime": 14,
+                        "stationCount": 2,
+                        "lane": [
+                            {
+                                "name": "수도권 1호선",
+                                "subwayCode": 1,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "신도림",
+                        "startX": 126.891598,
+                        "startY": 37.508998,
+                        "endName": "가산디지털단지",
+                        "endX": 126.882643,
+                        "endY": 37.481432,
+                        "way": "가산디지털단지",
+                        "wayCode": 2,
+                        "door": "null",
+                        "startID": 140,
+                        "endID": 172,
+                        "endExitNo": "8",
+                        "endExitX": 126.88241476020511,
+                        "endExitY": 37.48125174061953,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 140,
+                                    "stationName": "신도림",
+                                    "x": "126.8916",
+                                    "y": "37.509006"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 141,
+                                    "stationName": "구로",
+                                    "x": "126.882278",
+                                    "y": "37.502916"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 172,
+                                    "stationName": "가산디지털단지",
+                                    "x": "126.882652",
+                                    "y": "37.48144"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    }
+                ]
+            },
+            {
+                "pathType": 1,
+                "info": {
+                    "trafficDistance": 10200,
+                    "totalWalk": 1046,
+                    "totalTime": 65,
+                    "payment": 1350,
+                    "busTransitCount": 0,
+                    "subwayTransitCount": 3,
+                    "mapObj": "19:2:1608:1609@2:2:239:233@7:2:744:745",
+                    "firstStartStation": "서강대",
+                    "lastEndStation": "남구로",
+                    "totalStationCount": 8,
+                    "busStationCount": 0,
+                    "subwayStationCount": 8,
+                    "totalDistance": 11246,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 386,
+                        "sectionTime": 6
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 1000,
+                        "sectionTime": 11,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "name": "경의중앙선",
+                                "subwayCode": 104,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "서강대",
+                        "startX": 126.935403,
+                        "startY": 37.552137,
+                        "endName": "홍대입구",
+                        "endX": 126.928082,
+                        "endY": 37.556801,
+                        "way": "홍대입구",
+                        "wayCode": 1,
+                        "door": "1-1",
+                        "startID": 1608,
+                        "endID": 1609,
+                        "startExitNo": "2",
+                        "startExitX": 126.93447337941888,
+                        "startExitY": 37.55274267668967,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 1608,
+                                    "stationName": "서강대",
+                                    "x": "126.935406",
+                                    "y": "37.552141"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 1609,
+                                    "stationName": "홍대입구",
+                                    "x": "126.928086",
+                                    "y": "37.556804"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 8100,
+                        "sectionTime": 23,
+                        "stationCount": 6,
+                        "lane": [
+                            {
+                                "name": "수도권 2호선",
+                                "subwayCode": 2,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "홍대입구",
+                        "startX": 126.92378,
+                        "startY": 37.556843,
+                        "endName": "대림",
+                        "endX": 126.894916,
+                        "endY": 37.493369,
+                        "way": "대림",
+                        "wayCode": 1,
+                        "door": "4-1",
+                        "startID": 239,
+                        "endID": 233,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 239,
+                                    "stationName": "홍대입구",
+                                    "x": "126.923791",
+                                    "y": "37.556848"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 238,
+                                    "stationName": "합정",
+                                    "x": "126.914543",
+                                    "y": "37.549942"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 237,
+                                    "stationName": "당산",
+                                    "x": "126.902682",
+                                    "y": "37.534863"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 236,
+                                    "stationName": "영등포구청",
+                                    "x": "126.896659",
+                                    "y": "37.525786"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 235,
+                                    "stationName": "문래",
+                                    "x": "126.894825",
+                                    "y": "37.517999"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 234,
+                                    "stationName": "신도림",
+                                    "x": "126.891353",
+                                    "y": "37.508572"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 233,
+                                    "stationName": "대림",
+                                    "x": "126.894922",
+                                    "y": "37.493376"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 1,
+                        "distance": 1100,
+                        "sectionTime": 11,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "name": "수도권 7호선",
+                                "subwayCode": 7,
+                                "subwayCityCode": 1000
+                            }
+                        ],
+                        "startName": "대림",
+                        "startX": 126.896677,
+                        "startY": 37.492809,
+                        "endName": "남구로",
+                        "endX": 126.887277,
+                        "endY": 37.486089,
+                        "way": "남구로",
+                        "wayCode": 2,
+                        "door": "null",
+                        "startID": 744,
+                        "endID": 745,
+                        "endExitNo": "3",
+                        "endExitX": 126.88611501521581,
+                        "endExitY": 37.484657884031726,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 744,
+                                    "stationName": "대림",
+                                    "x": "126.896683",
+                                    "y": "37.492811"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 745,
+                                    "stationName": "남구로",
+                                    "x": "126.887288",
+                                    "y": "37.486098"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 660,
+                        "sectionTime": 10
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 12734,
+                    "totalWalk": 587,
+                    "totalTime": 55,
+                    "payment": 1300,
+                    "busTransitCount": 2,
+                    "subwayTransitCount": 0,
+                    "mapObj": "1280:1:34:42@1442:1:33:48",
+                    "firstStartStation": "신촌로터리",
+                    "lastEndStation": "남구로역",
+                    "totalStationCount": 23,
+                    "busStationCount": 23,
+                    "subwayStationCount": 0,
+                    "totalDistance": 13321,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 141,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 4834,
+                        "sectionTime": 18,
+                        "stationCount": 8,
+                        "lane": [
+                            {
+                                "busNo": "7613",
+                                "type": 12,
+                                "busID": 1280
+                            }
+                        ],
+                        "startName": "신촌로터리",
+                        "startX": 126.93687,
+                        "startY": 37.554043,
+                        "endName": "여의도순복음교회",
+                        "endX": 126.923136,
+                        "endY": 37.531581,
+                        "startID": 103689,
+                        "endID": 103143,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103689,
+                                    "stationName": "신촌로터리",
+                                    "x": "126.93687",
+                                    "y": "37.554043"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103703,
+                                    "stationName": "서강대학교",
+                                    "x": "126.937367",
+                                    "y": "37.551713"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 103743,
+                                    "stationName": "광성중고등학교",
+                                    "x": "126.939",
+                                    "y": "37.549088"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 103802,
+                                    "stationName": "대흥역",
+                                    "x": "126.941039",
+                                    "y": "37.548124"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 103868,
+                                    "stationName": "용강초등학교",
+                                    "x": "126.94351",
+                                    "y": "37.547029"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 103962,
+                                    "stationName": "동도중학교.서울디자인고등학교",
+                                    "x": "126.946744",
+                                    "y": "37.545634"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 104042,
+                                    "stationName": "공덕역1번출구",
+                                    "x": "126.949272",
+                                    "y": "37.544512"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 126846,
+                                    "stationName": "마포역",
+                                    "x": "126.946427",
+                                    "y": "37.539982"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 103143,
+                                    "stationName": "여의도순복음교회",
+                                    "x": "126.923136",
+                                    "y": "37.531581"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 7900,
+                        "sectionTime": 28,
+                        "stationCount": 15,
+                        "lane": [
+                            {
+                                "busNo": "5615",
+                                "type": 12,
+                                "busID": 1442
+                            }
+                        ],
+                        "startName": "여의도순복음교회",
+                        "startX": 126.923136,
+                        "startY": 37.531581,
+                        "endName": "남구로역",
+                        "endX": 126.88623,
+                        "endY": 37.484277,
+                        "startID": 103143,
+                        "endID": 101920,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103143,
+                                    "stationName": "여의도순복음교회",
+                                    "x": "126.923136",
+                                    "y": "37.531581"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 152014,
+                                    "stationName": "국회의사당",
+                                    "x": "126.919258",
+                                    "y": "37.530627"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 151557,
+                                    "stationName": "KBS",
+                                    "x": "126.918178",
+                                    "y": "37.524715"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 117238,
+                                    "stationName": "영등포역",
+                                    "x": "126.907085",
+                                    "y": "37.516603"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 15,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 446,
+                        "sectionTime": 7
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 11078,
+                    "totalWalk": 737,
+                    "totalTime": 56,
+                    "payment": 1300,
+                    "busTransitCount": 3,
+                    "subwayTransitCount": 0,
+                    "mapObj": "989:1:40:41@906:1:49:53@1442:1:35:49",
+                    "firstStartStation": "신촌오거리.2호선신촌역",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 19,
+                    "busStationCount": 19,
+                    "subwayStationCount": 0,
+                    "totalDistance": 11815,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 125,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 371,
+                        "sectionTime": 6,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "busNo": "271A",
+                                "type": 11,
+                                "busID": 989
+                            },
+                            {
+                                "busNo": "602",
+                                "type": 11,
+                                "busID": 1166
+                            },
+                            {
+                                "busNo": "7011",
+                                "type": 12,
+                                "busID": 1242
+                            },
+                            {
+                                "busNo": "721",
+                                "type": 11,
+                                "busID": 1259
+                            },
+                            {
+                                "busNo": "270",
+                                "type": 11,
+                                "busID": 988
+                            },
+                            {
+                                "busNo": "603",
+                                "type": 11,
+                                "busID": 1168
+                            },
+                            {
+                                "busNo": "6716",
+                                "type": 12,
+                                "busID": 1197
+                            },
+                            {
+                                "busNo": "273",
+                                "type": 11,
+                                "busID": 941
+                            },
+                            {
+                                "busNo": "7611",
+                                "type": 12,
+                                "busID": 1278
+                            },
+                            {
+                                "busNo": "707",
+                                "type": 11,
+                                "busID": 1372
+                            },
+                            {
+                                "busNo": "7713",
+                                "type": 12,
+                                "busID": 1285
+                            }
+                        ],
+                        "startName": "신촌오거리.2호선신촌역",
+                        "startX": 126.938692,
+                        "startY": 37.555672,
+                        "endName": "신촌오거리.현대백화점",
+                        "endX": 126.934737,
+                        "endY": 37.55597,
+                        "startID": 193784,
+                        "endID": 193782,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 193784,
+                                    "stationName": "신촌오거리.2호선신촌역",
+                                    "x": "126.938692",
+                                    "y": "37.555672"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 193782,
+                                    "stationName": "신촌오거리.현대백화점",
+                                    "x": "126.934737",
+                                    "y": "37.55597"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 209,
+                        "sectionTime": 3
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 3395,
+                        "sectionTime": 13,
+                        "stationCount": 4,
+                        "lane": [
+                            {
+                                "busNo": "153",
+                                "type": 11,
+                                "busID": 906
+                            },
+                            {
+                                "busNo": "8761(출근맞춤버스)",
+                                "type": 12,
+                                "busID": 612
+                            },
+                            {
+                                "busNo": "271B",
+                                "type": 11,
+                                "busID": 2802771
+                            }
+                        ],
+                        "startName": "신촌로터리",
+                        "startX": 126.934889,
+                        "startY": 37.554088,
+                        "endName": "국회의사당역",
+                        "endX": 126.917427,
+                        "endY": 37.528105,
+                        "startID": 103603,
+                        "endID": 102926,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103603,
+                                    "stationName": "신촌로터리",
+                                    "x": "126.934889",
+                                    "y": "37.554088"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103514,
+                                    "stationName": "창전현대홈타운",
+                                    "x": "126.932196",
+                                    "y": "37.550856"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 103487,
+                                    "stationName": "광흥창역.서강동주민센터",
+                                    "x": "126.931418",
+                                    "y": "37.548236"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 152014,
+                                    "stationName": "국회의사당",
+                                    "x": "126.919258",
+                                    "y": "37.530627"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 7312,
+                        "sectionTime": 26,
+                        "stationCount": 14,
+                        "lane": [
+                            {
+                                "busNo": "5615",
+                                "type": 12,
+                                "busID": 1442
+                            }
+                        ],
+                        "startName": "국회의사당역",
+                        "startX": 126.917427,
+                        "startY": 37.528105,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 102926,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 151557,
+                                    "stationName": "KBS",
+                                    "x": "126.918178",
+                                    "y": "37.524715"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 117238,
+                                    "stationName": "영등포역",
+                                    "x": "126.907085",
+                                    "y": "37.516603"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 10572,
+                    "totalWalk": 974,
+                    "totalTime": 59,
+                    "payment": 1300,
+                    "busTransitCount": 3,
+                    "subwayTransitCount": 0,
+                    "mapObj": "1527:1:1:2@906:1:50:53@1442:1:35:49",
+                    "firstStartStation": "용약국",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 18,
+                    "busStationCount": 18,
+                    "subwayStationCount": 0,
+                    "totalDistance": 11546,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 104,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 305,
+                        "sectionTime": 6,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "busNo": "마포10",
+                                "type": 3,
+                                "busID": 1527
+                            }
+                        ],
+                        "startName": "용약국",
+                        "startX": 126.936831,
+                        "startY": 37.554421,
+                        "endName": "서강대학교",
+                        "endX": 126.937367,
+                        "endY": 37.551713,
+                        "startID": 123586,
+                        "endID": 103703,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 123586,
+                                    "stationName": "용약국",
+                                    "x": "126.936831",
+                                    "y": "37.554421"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103703,
+                                    "stationName": "서강대학교",
+                                    "x": "126.937367",
+                                    "y": "37.551713"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 467,
+                        "sectionTime": 7
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 2955,
+                        "sectionTime": 12,
+                        "stationCount": 3,
+                        "lane": [
+                            {
+                                "busNo": "153",
+                                "type": 11,
+                                "busID": 906
+                            },
+                            {
+                                "busNo": "8761(출근맞춤버스)",
+                                "type": 12,
+                                "busID": 612
+                            }
+                        ],
+                        "startName": "창전현대홈타운",
+                        "startX": 126.932196,
+                        "startY": 37.550856,
+                        "endName": "국회의사당역",
+                        "endX": 126.917427,
+                        "endY": 37.528105,
+                        "startID": 103514,
+                        "endID": 102926,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103514,
+                                    "stationName": "창전현대홈타운",
+                                    "x": "126.932196",
+                                    "y": "37.550856"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103487,
+                                    "stationName": "광흥창역.서강동주민센터",
+                                    "x": "126.931418",
+                                    "y": "37.548236"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 152014,
+                                    "stationName": "국회의사당",
+                                    "x": "126.919258",
+                                    "y": "37.530627"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 7312,
+                        "sectionTime": 26,
+                        "stationCount": 14,
+                        "lane": [
+                            {
+                                "busNo": "5615",
+                                "type": 12,
+                                "busID": 1442
+                            }
+                        ],
+                        "startName": "국회의사당역",
+                        "startX": 126.917427,
+                        "startY": 37.528105,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 102926,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 151557,
+                                    "stationName": "KBS",
+                                    "x": "126.918178",
+                                    "y": "37.524715"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 117238,
+                                    "stationName": "영등포역",
+                                    "x": "126.907085",
+                                    "y": "37.516603"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 10902,
+                    "totalWalk": 641,
+                    "totalTime": 56,
+                    "payment": 1300,
+                    "busTransitCount": 3,
+                    "subwayTransitCount": 0,
+                    "mapObj": "1542:1:10:14@906:1:50:53@1442:1:35:49",
+                    "firstStartStation": "신촌전철역.그랜드마트",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 21,
+                    "busStationCount": 21,
+                    "subwayStationCount": 0,
+                    "totalDistance": 11543,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 129,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 635,
+                        "sectionTime": 8,
+                        "stationCount": 4,
+                        "lane": [
+                            {
+                                "busNo": "마포14",
+                                "type": 3,
+                                "busID": 1542
+                            }
+                        ],
+                        "startName": "신촌전철역.그랜드마트",
+                        "startX": 126.936045,
+                        "startY": 37.554774,
+                        "endName": "창전삼성아파트107동",
+                        "endX": 126.930961,
+                        "endY": 37.550926,
+                        "startID": 103660,
+                        "endID": 81415,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103660,
+                                    "stationName": "신촌전철역.그랜드마트",
+                                    "x": "126.936045",
+                                    "y": "37.554774"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 123462,
+                                    "stationName": "기업은행.신촌연세병원",
+                                    "x": "126.933554",
+                                    "y": "37.553256"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 81418,
+                                    "stationName": "창전삼성아파트입구",
+                                    "x": "126.932488",
+                                    "y": "37.551805"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 81414,
+                                    "stationName": "창전삼성아파트104동",
+                                    "x": "126.931624",
+                                    "y": "37.551292"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 81415,
+                                    "stationName": "창전삼성아파트107동",
+                                    "x": "126.930961",
+                                    "y": "37.550926"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 109,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 2955,
+                        "sectionTime": 12,
+                        "stationCount": 3,
+                        "lane": [
+                            {
+                                "busNo": "153",
+                                "type": 11,
+                                "busID": 906
+                            },
+                            {
+                                "busNo": "8761(출근맞춤버스)",
+                                "type": 12,
+                                "busID": 612
+                            }
+                        ],
+                        "startName": "창전현대홈타운",
+                        "startX": 126.932196,
+                        "startY": 37.550856,
+                        "endName": "국회의사당역",
+                        "endX": 126.917427,
+                        "endY": 37.528105,
+                        "startID": 103514,
+                        "endID": 102926,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103514,
+                                    "stationName": "창전현대홈타운",
+                                    "x": "126.932196",
+                                    "y": "37.550856"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103487,
+                                    "stationName": "광흥창역.서강동주민센터",
+                                    "x": "126.931418",
+                                    "y": "37.548236"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 152014,
+                                    "stationName": "국회의사당",
+                                    "x": "126.919258",
+                                    "y": "37.530627"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 7312,
+                        "sectionTime": 26,
+                        "stationCount": 14,
+                        "lane": [
+                            {
+                                "busNo": "5615",
+                                "type": 12,
+                                "busID": 1442
+                            }
+                        ],
+                        "startName": "국회의사당역",
+                        "startX": 126.917427,
+                        "startY": 37.528105,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 102926,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 151557,
+                                    "stationName": "KBS",
+                                    "x": "126.918178",
+                                    "y": "37.524715"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 117238,
+                                    "stationName": "영등포역",
+                                    "x": "126.907085",
+                                    "y": "37.516603"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            },
+            {
+                "pathType": 2,
+                "info": {
+                    "trafficDistance": 11078,
+                    "totalWalk": 737,
+                    "totalTime": 56,
+                    "payment": 1550,
+                    "busTransitCount": 3,
+                    "subwayTransitCount": 0,
+                    "mapObj": "5539:1:65:66@906:1:49:53@1442:1:35:49",
+                    "firstStartStation": "신촌오거리.2호선신촌역",
+                    "lastEndStation": "가리봉시장",
+                    "totalStationCount": 19,
+                    "busStationCount": 19,
+                    "subwayStationCount": 0,
+                    "totalDistance": 11815,
+                    "totalWalkTime": -1
+                },
+                "subPath": [
+                    {
+                        "trafficType": 3,
+                        "distance": 125,
+                        "sectionTime": 2
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 371,
+                        "sectionTime": 6,
+                        "stationCount": 1,
+                        "lane": [
+                            {
+                                "busNo": "82",
+                                "type": 1,
+                                "busID": 5539
+                            }
+                        ],
+                        "startName": "신촌오거리.2호선신촌역",
+                        "startX": 126.938692,
+                        "startY": 37.555672,
+                        "endName": "신촌오거리.현대백화점",
+                        "endX": 126.934737,
+                        "endY": 37.55597,
+                        "startID": 193784,
+                        "endID": 193782,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 193784,
+                                    "stationName": "신촌오거리.2호선신촌역",
+                                    "x": "126.938692",
+                                    "y": "37.555672"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 193782,
+                                    "stationName": "신촌오거리.현대백화점",
+                                    "x": "126.934737",
+                                    "y": "37.55597"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 209,
+                        "sectionTime": 3
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 3395,
+                        "sectionTime": 13,
+                        "stationCount": 4,
+                        "lane": [
+                            {
+                                "busNo": "153",
+                                "type": 11,
+                                "busID": 906
+                            },
+                            {
+                                "busNo": "8761(출근맞춤버스)",
+                                "type": 12,
+                                "busID": 612
+                            }
+                        ],
+                        "startName": "신촌로터리",
+                        "startX": 126.934889,
+                        "startY": 37.554088,
+                        "endName": "국회의사당역",
+                        "endX": 126.917427,
+                        "endY": 37.528105,
+                        "startID": 103603,
+                        "endID": 102926,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 103603,
+                                    "stationName": "신촌로터리",
+                                    "x": "126.934889",
+                                    "y": "37.554088"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 103514,
+                                    "stationName": "창전현대홈타운",
+                                    "x": "126.932196",
+                                    "y": "37.550856"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 103487,
+                                    "stationName": "광흥창역.서강동주민센터",
+                                    "x": "126.931418",
+                                    "y": "37.548236"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 152014,
+                                    "stationName": "국회의사당",
+                                    "x": "126.919258",
+                                    "y": "37.530627"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 0,
+                        "sectionTime": 0
+                    },
+                    {
+                        "trafficType": 2,
+                        "distance": 7312,
+                        "sectionTime": 26,
+                        "stationCount": 14,
+                        "lane": [
+                            {
+                                "busNo": "5615",
+                                "type": 12,
+                                "busID": 1442
+                            }
+                        ],
+                        "startName": "국회의사당역",
+                        "startX": 126.917427,
+                        "startY": 37.528105,
+                        "endName": "가리봉시장",
+                        "endX": 126.887014,
+                        "endY": 37.482482,
+                        "startID": 102926,
+                        "endID": 101940,
+                        "passStopList": {
+                            "stations": [
+                                {
+                                    "index": 0,
+                                    "stationID": 102926,
+                                    "stationName": "국회의사당역",
+                                    "x": "126.917427",
+                                    "y": "37.528105"
+                                },
+                                {
+                                    "index": 1,
+                                    "stationID": 151557,
+                                    "stationName": "KBS",
+                                    "x": "126.918178",
+                                    "y": "37.524715"
+                                },
+                                {
+                                    "index": 2,
+                                    "stationID": 117238,
+                                    "stationName": "영등포역",
+                                    "x": "126.907085",
+                                    "y": "37.516603"
+                                },
+                                {
+                                    "index": 3,
+                                    "stationID": 117241,
+                                    "stationName": "남부지방법원등기국.구로세무서(에이스하이테크시티)",
+                                    "x": "126.89978",
+                                    "y": "37.514102"
+                                },
+                                {
+                                    "index": 4,
+                                    "stationID": 117243,
+                                    "stationName": "문래동남성아파트",
+                                    "x": "126.892593",
+                                    "y": "37.511287"
+                                },
+                                {
+                                    "index": 5,
+                                    "stationID": 117244,
+                                    "stationName": "신도림역",
+                                    "x": "126.888921",
+                                    "y": "37.509496"
+                                },
+                                {
+                                    "index": 6,
+                                    "stationID": 101894,
+                                    "stationName": "신도림중학교",
+                                    "x": "126.884866",
+                                    "y": "37.506854"
+                                },
+                                {
+                                    "index": 7,
+                                    "stationID": 101805,
+                                    "stationName": "구로역",
+                                    "x": "126.882214",
+                                    "y": "37.504927"
+                                },
+                                {
+                                    "index": 8,
+                                    "stationID": 101844,
+                                    "stationName": "쌍용구로정비사업소",
+                                    "x": "126.88236",
+                                    "y": "37.499649"
+                                },
+                                {
+                                    "index": 9,
+                                    "stationID": 101846,
+                                    "stationName": "우리유앤미아파트",
+                                    "x": "126.882414",
+                                    "y": "37.496811"
+                                },
+                                {
+                                    "index": 10,
+                                    "stationID": 101857,
+                                    "stationName": "구로119안전센터",
+                                    "x": "126.882978",
+                                    "y": "37.493861"
+                                },
+                                {
+                                    "index": 11,
+                                    "stationID": 101872,
+                                    "stationName": "구로4동우체국.고대구로병원정문",
+                                    "x": "126.884123",
+                                    "y": "37.489844"
+                                },
+                                {
+                                    "index": 12,
+                                    "stationID": 101883,
+                                    "stationName": "구로시장",
+                                    "x": "126.884566",
+                                    "y": "37.488181"
+                                },
+                                {
+                                    "index": 13,
+                                    "stationID": 101920,
+                                    "stationName": "남구로역",
+                                    "x": "126.88623",
+                                    "y": "37.484277"
+                                },
+                                {
+                                    "index": 14,
+                                    "stationID": 101940,
+                                    "stationName": "가리봉시장",
+                                    "x": "126.887014",
+                                    "y": "37.482482"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "trafficType": 3,
+                        "distance": 403,
+                        "sectionTime": 6
+                    }
+                ]
+            }
+        ]
+    }
+}
